@@ -1,0 +1,12 @@
+#!/bin/sh
+
+export mirror="http://localhost:9999/"
+
+lb config noauto \
+	--distribution "squeeze" \
+	--backports false \
+	--mirror-bootstrap $mirror/debian \
+	--mirror-chroot-security $mirror/security \
+	--packages-lists "standard standard-x11" \
+	--packages "gnustep gdm" \
+	"${@}"
