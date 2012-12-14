@@ -8,6 +8,6 @@ xorg menu
 alsa-base alsa-utils
 keyboard-configuration
 
-wmaker gdm
+wmaker gdm3
 
 eclipse
