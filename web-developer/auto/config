@@ -2,11 +2,10 @@
 
 export mirror="http://localhost:9999/"
 
+export release="wheezy"
+
 lb config noauto \
-	--distribution "squeeze" \
-	--backports false \
+	--distribution "$release" \
 	--mirror-bootstrap $mirror/debian \
 	--mirror-chroot-security $mirror/security \
-	--packages-lists "standard standard-x11" \
-	--packages "gnustep gdm" \
 	"${@}"

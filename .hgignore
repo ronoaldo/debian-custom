@@ -1,0 +1,4 @@
+syntax: glob
+*/cache/*
+*/chroot/*
+*/.stage/*
