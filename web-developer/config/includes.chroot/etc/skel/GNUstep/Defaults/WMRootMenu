@@ -1,0 +1,155 @@
+(
+  Applications,
+  (Aplicativos, OPEN_MENU, "/etc/GNUstep/Defaults/menu.hook"),
+  (Terminator, SHORTCUT, "Mod4+t", EXEC, terminator),
+  (Internet, SHORTCUT, "Mod4+b", EXEC, firefox),
+  (Run..., SHORTCUT, "Mod4+r", EXEC, "%a(Run,Type command to run:)"),
+  (
+    Appearance,
+    (
+      Themes,
+      OPEN_MENU,
+      "-noext /usr/share/WindowMaker/Themes $HOME/GNUstep/Library/WindowMaker/Themes WITH setstyle"
+    ),
+    (
+      Styles,
+      OPEN_MENU,
+      "-noext /usr/share/WindowMaker/Styles $HOME/GNUstep/Library/WindowMaker/Styles WITH setstyle"
+    ),
+    (
+      "Icon Sets",
+      OPEN_MENU,
+      "-noext /usr/share/WindowMaker/IconSets $HOME/GNUstep/Library/WindowMaker/IconSets WITH seticons"
+    ),
+    (
+      Background,
+      (
+        Solid,
+        (Black, EXEC, "wdwrite WindowMaker WorkspaceBack '(solid, black)'"),
+        (
+          Blue,
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(solid, \"#505075\")'"
+        ),
+        (
+          Indigo,
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(solid, \"#243e6c\")'"
+        ),
+        (
+          Bluemarine,
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(solid, \"#224477\")'"
+        ),
+        (
+          Purple,
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(solid, \"#554466\")'"
+        ),
+        (
+          Wheat,
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(solid, wheat4)'"
+        ),
+        (
+          "Dark Gray",
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(solid, \"#333340\")'"
+        ),
+        (
+          Wine,
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(solid, \"#400020\")'"
+        )
+      ),
+      (
+        Gradient,
+        (
+          Sunset,
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(mvgradient, deepskyblue4, black, deepskyblue4, tomato4)'"
+        ),
+        (
+          Sky,
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(vgradient, blue4, white)'"
+        ),
+        (
+          "Blue Shades",
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(vgradient, \"#7080a5\", \"#101020\")'"
+        ),
+        (
+          "Indigo Shades",
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(vgradient, \"#746ebc\", \"#242e4c\")'"
+        ),
+        (
+          "Purple Shades",
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(vgradient, \"#654c66\", \"#151426\")'"
+        ),
+        (
+          "Wheat Shades",
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(vgradient, \"#a09060\", \"#302010\")'"
+        ),
+        (
+          "Grey Shades",
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(vgradient, \"#636380\", \"#131318\")'"
+        ),
+        (
+          "Wine Shades",
+          EXEC,
+          "wdwrite WindowMaker WorkspaceBack '(vgradient, \"#600040\", \"#180010\")'"
+        )
+      ),
+      (
+        Images,
+        OPEN_MENU,
+        "-noext /usr/share/WindowMaker/Backgrounds $HOME/GNUstep/Library/WindowMaker/Backgrounds WITH wmsetbg -u -t"
+      )
+    ),
+    (
+      "Save Theme",
+      SHEXEC,
+      "getstyle -t $HOME/GNUstep/Library/WindowMaker/Themes/\"%a(Theme name)\""
+    ),
+    (
+      "Save IconSet",
+      SHEXEC,
+      "geticonset $HOME/GNUstep/Library/WindowMaker/IconSets/\"%a(IconSet name)\""
+    ),
+    (
+      "Preferences Utility",
+      EXEC,
+      "/usr/local/GNUstep/Applications/WPrefs.app/WPrefs"
+    )
+  ),
+  (
+    "Sele\303\247\303\243o",
+    (Copiar, SHORTCUT, "Mod4+c", SHEXEC, "echo '%s' | wxcopy"),
+    ("Enviar por e-mail", EXEC, "xterm -name mail -T Pine -e pine %s"),
+    ("Pesquisar online", EXEC, "mozilla %s"),
+    ("Pesquisar no manual", EXEC, "MANUAL_SEARCH(%s)")
+  ),
+  ("\303\201reas de Trabalho", WORKSPACE_MENU),
+  (
+    "Sess\303\243o",
+    (Salvar, SAVE_SESSION),
+    (Limpar, CLEAR_SESSION),
+    ("Reiniciar WindowMaker", RESTART),
+    ("Sair do WindowMaker", EXIT)
+  ),
+  (
+    Info,
+    ("Info Panel", INFO_PANEL),
+    (Legal, LEGAL_PANEL),
+    ("System Console", EXEC, xconsole),
+    ("System Load", SHEXEC, "xosview || xload"),
+    ("Process List", EXEC, "xterm -e top"),
+    ("Manual Browser", EXEC, xman)
+  ),
+  ("Sair ...", EXIT)
+)

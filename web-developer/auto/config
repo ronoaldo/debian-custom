@@ -8,4 +8,5 @@ lb config noauto \
 	--distribution "$release" \
 	--mirror-bootstrap $mirror/debian \
 	--mirror-chroot-security $mirror/security \
+	--debian-installer live \
 	"${@}"

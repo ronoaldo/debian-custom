@@ -10,7 +10,7 @@ alsa-base alsa-utils
 keyboard-configuration
 desktop-base
 
-wmaker
-docker
-wmclock
-wdm
+wmaker wmcpuload wmmixer wmtemp docker wmclock wdm
+iceweasel chromium-browser gnash
+
+task-brazilian-portuguese task-brazilian-portuguese-desktop

@@ -1,0 +1,5 @@
+#!/bin/sh
+xset m 20/10 4
+
+xscreensaver -no-splash &
+

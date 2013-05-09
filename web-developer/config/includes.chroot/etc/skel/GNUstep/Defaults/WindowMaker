@@ -1,0 +1,92 @@
+{
+  FTitleColor = "#ffffff";
+  MenuDisabledColor = "#999999";
+  IconTitleBack = "#20202e";
+  FTitleBack = (mdgradient, blue, "#000000", "#444444");
+  MaximizeKey = "Control+M";
+  ClipTitleFont = "Droid Sans,Sans:slant=0:weight=200:width=100:pixelsize=10";
+  IconTitleFont = "Droid Sans,Sans:pixelsize=9";
+  LargeDisplayFont = "Droid Sans,Sans:pixelsize=24";
+  WindowShortcut10Key = None;
+  MenuTitleColor = "#ffffff";
+  WindowShortcut3Key = None;
+  MenuTitleFont = "Droid Sans,Sans:bold:pixelsize=12";
+  WindowRelaunchKey = None;
+  WindowShortcut4Key = None;
+  NoWindowOverDock = NO;
+  WorkspaceBack = (
+    spixmap,
+    "~/GNUstep/Library/WindowMaker/Themes/DebianDark.themed/debian_elegant_brit_wallpaper.png",
+    gray20
+  );
+  HighlightTextColor = "#ffffff";
+  WindowShortcut9Key = None;
+  HelpBalloons = NO;
+  MoveResizeKey = None;
+  WindowListMouseButton = middle;
+  AppIconBalloons = NO;
+  ClipTitleColor = white;
+  WorkspaceBorder = None;
+  WindowTitleFont = "Droid Sans:slant=0:weight=200:width=100:pixelsize=12";
+  LHMaximizeKey = None;
+  RootMenuKey = "Mod4+M";
+  ResizebarBack = (solid, "#edeceb");
+  DisplayFont = "Droid Sans,Sans:pixelsize=12";
+  WorkspaceBorderSize = 0;
+  CycleActiveHeadOnly = NO;
+  DockRaiseLowerKey = None;
+  MenuTitleExtendSpace = 0;
+  WindowShortcut1Key = None;
+  ShowClipTitle = NO;
+  RHMaximizeKey = None;
+  Superfluous = YES;
+  WindowShortcut2Key = None;
+  ToggleKbdModeKey = None;
+  DoNotMakeAppIconsBounce = NO;
+  MiniwindowTitleBalloons = NO;
+  MaximusKey = None;
+  WindowShortcut7Key = None;
+  OpaqueResize = NO;
+  MenuTextBack = (mdgradient, "#edeceb", "#edeceb", "#c0c0c0");
+  RaiseAppIconsWhenBouncing = NO;
+  ResizeIncrement = 0;
+  WindowShortcut8Key = None;
+  OpaqueMoveResizeKeyboard = NO;
+  GroupNextKey = None;
+  SingleClickLaunch = NO;
+  MenuTextColor = "#000000";
+  Attraction = NO;
+  IconBack = (
+    tpixmap,
+    "~/GNUstep/Library/WindowMaker/Themes/DebianDark.themed/background.tiff",
+    "#000000"
+  );
+  AntialiasedText = NO;
+  DisableBlinking = NO;
+  WindowTitleExtendSpace = 0;
+  NormalCursor = (builtin, left_ptr);
+  WindowListKey = None;
+  WorkspaceNameDisplayPosition = center;
+  MenuTextFont = "Droid Sans,Sans:slant=0:weight=80:width=100:pixelsize=12";
+  ScreenSwitchKey = None;
+  MenuTitleBack = (mdgradient, blue, "#000000", "#444444");
+  HMaximizeKey = None;
+  ApplicationMenuMouseButton = right;
+  HighlightColor = "#444444";
+  GroupPrevKey = None;
+  MinimizeAllKey = None;
+  CClipTitleColor = gray60;
+  WindowShortcut5Key = None;
+  HideOthersKey = None;
+  MenuStyle = flat;
+  WindowShortcut6Key = None;
+  PTitleBack = (mhgradient, "#5a5c66", "rgb:70/72/7e", "rgb:45/47/4e");
+  MenuTextExtendSpace = 0;
+  SelectWindowsMouseButton = left;
+  BounceAppIconsWhenUrgent = NO;
+  UTitleColor = "#333333";
+  ViKeyMenus = NO;
+  UTitleBack = (mdgradient, "#989aa6", "#444444", "#edeceb");
+  CirculateRaise = NO;
+  PTitleColor = "#ffffff";
+}

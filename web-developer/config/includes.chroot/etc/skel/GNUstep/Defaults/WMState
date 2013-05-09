@@ -1,0 +1,109 @@
+{
+  Dock = {
+    Applications = (
+      {
+        Forced = No;
+        Name = Logo.WMDock;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,0";
+        Lock = No;
+        Command = "-";
+      },
+      {
+        Forced = No;
+        Name = wmcpuload.DockApp;
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,5";
+        Lock = Yes;
+        PasteCommand = "wmcpuload %s";
+        Command = wmcpuload;
+      },
+      {
+        Forced = No;
+        Name = groupLeader.WPrefs;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,1";
+        Lock = Yes;
+        Command = "/usr/lib/GNUstep/System/Applications/WPrefs.app/WPrefs";
+      },
+      {
+        Forced = No;
+        Name = wmtemp.DockApp;
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,4";
+        Lock = Yes;
+        PasteCommand = "wmtemp %s";
+        Command = wmtemp;
+      },
+      {
+        Forced = No;
+        Name = wmclock.WMClock;
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,2";
+        Lock = Yes;
+        PasteCommand = "wmclock -24 -led green -exe '/usr/bin/xscreensaver-command -lock' %s";
+        Command = "wmclock -24 -led green -exe '/usr/bin/xscreensaver-command -lock'";
+      },
+      {
+        Forced = No;
+        Name = wmmixer.WMMixer;
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,7";
+        Lock = Yes;
+        PasteCommand = "wmmixer -w %s";
+        Command = "wmmixer -w";
+      },
+      {
+        Forced = No;
+        Name = docker.Docker;
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,8";
+        Lock = Yes;
+        PasteCommand = "docker -wmaker %s";
+        Command = "docker -wmaker";
+      }
+    );
+    Lowered = Yes;
+    Position = "-64,0";
+  };
+  Clip = {
+    Forced = No;
+    Name = Logo.WMClip;
+    BuggyApplication = No;
+    AutoLaunch = No;
+    Position = "0,0";
+    Lock = No;
+    Command = "-";
+  };
+  Workspaces = (
+    {
+      Clip = {
+        AutoRaiseLower = No;
+        AutoCollapse = No;
+        Applications = (
+          {
+            Forced = No;
+            Name = "x-terminal-emulator.XTerm";
+            BuggyApplication = No;
+            AutoLaunch = Yes;
+            Position = "0,1";
+            Lock = Yes;
+            Command = terminator;
+            Omnipresent = No;
+          }
+        );
+        Collapsed = No;
+        AutoAttractIcons = Yes;
+        Lowered = Yes;
+      };
+      Name = "Área de Trabalho 1";
+    }
+  );
+}
