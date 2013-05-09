@@ -4,10 +4,13 @@ live-config
 console-setup console-common kbd
 locales
 
-xorg menu
+xorg
+menu
 alsa-base alsa-utils
 keyboard-configuration
+desktop-base
 
-wmaker gdm3
-
-eclipse
+wmaker
+docker
+wmclock
+wdm
