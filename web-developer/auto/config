@@ -2,15 +2,21 @@
 
 export mirror="http://localhost:9999/"
 export release="wheezy"
+
 export locale="pt_BR.UTF-8"
 export kb="br"
 export kbvariant="abnt2"
 
+# Default values #
+export bootopts="locales=$locale keyboard-layouts=$kb keyboard-variants=$kbvariant"
+
 lb config noauto \
 	--distribution "$release" \
+	--architecture i386 --linux-flavours 486 \
 	--archive-areas "main contrib non-free" \
 	--mirror-bootstrap $mirror/debian \
 	--mirror-chroot-security $mirror/security \
 	--debian-installer live \
-	--bootappend-live "boot=live config locales=$locale keyboard-layouts=$kb keyboard-variants=$kbvariant"
+	--bootappend-live "boot=live config $bootopts" \
+	--apt-indices false --apt-recommends false --memtest none \
 	"${@}"

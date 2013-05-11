@@ -3,7 +3,7 @@
   (Aplicativos, OPEN_MENU, "/etc/GNUstep/Defaults/menu.hook"),
   (Terminator, SHORTCUT, "Mod4+t", EXEC, terminator),
   (Internet, SHORTCUT, "Mod4+b", EXEC, firefox),
-  (Run..., SHORTCUT, "Mod4+r", EXEC, "%a(Run,Type command to run:)"),
+  (Run..., SHORTCUT, "Mod1+F2", EXEC, "%a(Run,Type command to run:)"),
   (
     Appearance,
     (

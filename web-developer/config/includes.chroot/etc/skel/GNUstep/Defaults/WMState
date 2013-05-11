@@ -12,32 +12,12 @@
       },
       {
         Forced = No;
-        Name = wmcpuload.DockApp;
-        BuggyApplication = No;
-        AutoLaunch = Yes;
-        Position = "0,5";
-        Lock = Yes;
-        PasteCommand = "wmcpuload %s";
-        Command = wmcpuload;
-      },
-      {
-        Forced = No;
         Name = groupLeader.WPrefs;
         BuggyApplication = No;
         AutoLaunch = No;
         Position = "0,1";
         Lock = Yes;
         Command = "/usr/lib/GNUstep/System/Applications/WPrefs.app/WPrefs";
-      },
-      {
-        Forced = No;
-        Name = wmtemp.DockApp;
-        BuggyApplication = No;
-        AutoLaunch = Yes;
-        Position = "0,4";
-        Lock = Yes;
-        PasteCommand = "wmtemp %s";
-        Command = wmtemp;
       },
       {
         Forced = No;
@@ -51,10 +31,30 @@
       },
       {
         Forced = No;
+        Name = wmtemp.DockApp;
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,3";
+        Lock = Yes;
+        PasteCommand = "wmtemp %s";
+        Command = wmtemp;
+      },
+      {
+        Forced = No;
+        Name = wmcpuload.DockApp;
+        BuggyApplication = No;
+        AutoLaunch = Yes;
+        Position = "0,4";
+        Lock = Yes;
+        PasteCommand = "wmcpuload %s";
+        Command = wmcpuload;
+      },
+      {
+        Forced = No;
         Name = wmmixer.WMMixer;
         BuggyApplication = No;
         AutoLaunch = Yes;
-        Position = "0,7";
+        Position = "0,5";
         Lock = Yes;
         PasteCommand = "wmmixer -w %s";
         Command = "wmmixer -w";
@@ -64,7 +64,7 @@
         Name = docker.Docker;
         BuggyApplication = No;
         AutoLaunch = Yes;
-        Position = "0,8";
+        Position = "0,6";
         Lock = Yes;
         PasteCommand = "docker -wmaker %s";
         Command = "docker -wmaker";
@@ -92,10 +92,10 @@
             Forced = No;
             Name = "x-terminal-emulator.XTerm";
             BuggyApplication = No;
-            AutoLaunch = Yes;
+            AutoLaunch = No;
             Position = "0,1";
             Lock = Yes;
-            Command = terminator;
+            Command = xterm;
             Omnipresent = No;
           }
         );
