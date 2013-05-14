@@ -31,20 +31,10 @@
       },
       {
         Forced = No;
-        Name = wmtemp.DockApp;
-        BuggyApplication = No;
-        AutoLaunch = Yes;
-        Position = "0,3";
-        Lock = Yes;
-        PasteCommand = "wmtemp %s";
-        Command = wmtemp;
-      },
-      {
-        Forced = No;
         Name = wmcpuload.DockApp;
         BuggyApplication = No;
         AutoLaunch = Yes;
-        Position = "0,4";
+        Position = "0,3";
         Lock = Yes;
         PasteCommand = "wmcpuload %s";
         Command = wmcpuload;
@@ -54,7 +44,7 @@
         Name = wmmixer.WMMixer;
         BuggyApplication = No;
         AutoLaunch = Yes;
-        Position = "0,5";
+        Position = "0,4";
         Lock = Yes;
         PasteCommand = "wmmixer -w %s";
         Command = "wmmixer -w";
@@ -64,7 +54,7 @@
         Name = docker.Docker;
         BuggyApplication = No;
         AutoLaunch = Yes;
-        Position = "0,6";
+        Position = "0,5";
         Lock = Yes;
         PasteCommand = "docker -wmaker %s";
         Command = "docker -wmaker";
@@ -93,7 +83,7 @@
             Name = "x-terminal-emulator.XTerm";
             BuggyApplication = No;
             AutoLaunch = No;
-            Position = "0,1";
+            Position = "1,0";
             Lock = Yes;
             Command = xterm;
             Omnipresent = No;

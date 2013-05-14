@@ -7,6 +7,9 @@ debian-builder
 dh-make
 cdbs
 
+maven
+ant
+ivy
 openjdk-6-jdk
 python
 gcc

@@ -1,33 +1,55 @@
 eject
 file
 sudo
-user-setup
-live-config
-
 console-setup
 console-common
 kbd
 locales
 
-xorg
-menu 
+user-setup
+live-config
+
+desktop-base
+xserver-xorg
+menu
+menu-xdg
+xdg-utils
 alsa-base
 alsa-utils
 keyboard-configuration
-desktop-base
+network-manager-gnome
+avahi-daemon
+libnss-mdns
+anacron
+libg1-mesa-dri
+iw
+gdebi
+gdebi-core
 
-task-lxde-desktop
+synaptic
+xsane
+system-config-printer
+
+lightdm
+lightdm-gtk-greeter
+
+lxde
+lxde-icon-theme
+lxtask
+lxlauncher
+lxpolkit
 
 wmaker
 wmcpuload
 wmmixer
 wmtemp
 wmclock
-docker 
+docker
 
 chromium-browser
+iceweasel
 gnash
-icedtea-7-plugin
+icedtea-6-plugin
 
 task-brazilian-portuguese
 task-brazilian-portuguese-desktop
