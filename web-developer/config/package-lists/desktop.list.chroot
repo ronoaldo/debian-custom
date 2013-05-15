@@ -21,7 +21,7 @@ network-manager-gnome
 avahi-daemon
 libnss-mdns
 anacron
-libg1-mesa-dri
+libgl1-mesa-dri
 iw
 gdebi
 gdebi-core

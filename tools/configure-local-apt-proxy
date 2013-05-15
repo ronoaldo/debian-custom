@@ -1,0 +1,68 @@
+#!/bin/bash
+
+# Copyright 2013 Ronoaldo JLP (http://www.ronoaldo.net)
+# 
+#   Licensed under the Apache License, Version 2.0 (the 'License');
+#   you may not use this file except in compliance with the License.
+#   You may obtain a copy of the License at
+#
+#       http://www.apache.org/licenses/LICENSE-2.0
+#
+#   Unless required by applicable law or agreed to in writing, software
+#   distributed under the License is distributed on an 'AS IS' BASIS,
+#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#   See the License for the specific language governing permissions and
+#   limitations under the License.
+
+
+# Installs the approx apt proxy, if not installed yet
+install_approx() {
+	if dpkg -l approx > /dev/null 2>/dev/null ; then
+		apt-get install approx
+	fi
+}
+
+# Configures approx to the required tools
+configure_approx() {
+	read -p "Overrwrite /etc/approx/approx.conf? (y|N)" confirm
+	case confirm in
+		Y|y|yes|Yes)
+			;;
+		*)
+			echo "Aborting ..."
+			exit 1
+			;;
+	esac
+	cat > /etc/approx/approx.conf <<EOF
+# Here are some examples of remote repository mappings.
+# See http://www.debian.org/mirror/list for mirror sites.
+
+debian		http://ftp.br.debian.org/debian
+security	http://security.debian.org/debian-security
+
+ubuntu		http://br.archive.ubuntu.com/ubuntu
+ubuntu-security	http://security.ubuntu.com/ubuntu
+
+# The following are the default parameter values, so there is
+# no need to uncomment them unless you want a different value.
+# See approx.conf(5) for details.
+
+#\$cache		/var/cache/approx
+#\$interval	60
+#\$max_rate	unlimited
+#\$max_redirects 5
+#\$user		approx
+#\$group		approx
+#\$syslog	daemon
+#\$pdiffs	true
+\$offline	true
+#\$max_wait	10
+#\$verbose	false
+#\$debug		false
+EOF
+}
+
+# Main
+install_approx
+configure_approx
+
