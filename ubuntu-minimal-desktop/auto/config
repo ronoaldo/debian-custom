@@ -12,13 +12,21 @@ export bootopts="locales=$locale keyboard-layouts=$kb keyboard-variants=$kbvaria
 
 lb config noauto \
 	--mode=ubuntu \
-	--distribution "$release" --keyring-packages="ubuntu-keyring" \
-	--architecture i386 --linux-flavours generic \
+	--distribution="$release" \
+	--keyring-packages="ubuntu-keyring" \
 	--archive-areas "main restricted universe multiverse" \
 	--mirror-bootstrap $mirror/ubuntu \
 	--mirror-chroot-security $mirror/ubuntu-security \
-	--debian-installer live \
-	--bootappend-live "boot=live config $bootopts" \
-	--apt-indices false --apt-recommends false --memtest none \
-	--initramfs casper  \
+	--initramfs=live-boot \
+	--binary-images=iso-hibrid \
+	--bootloader=yaboot \
+	--debian-installer=live \
+	--ignore-system-defaults \
+	--iso-application="Ubuntu Minimal" \
+	--iso-preparer="Ronoaldo" \
+	--iso-publisher="Ronoaldo" \
+	--iso-volume="Ubuntu_Minimal_Setup" \
+	--memtest=none \
+	--system=live \
+	--source=false \
 	"${@}"
