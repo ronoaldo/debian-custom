@@ -1,25 +1,27 @@
 #!/bin/sh
 
+# Use the tools/configure-local-apt-cache script
 export mirror="http://localhost:9999"
-export release="precise"
 
+export release="precise"
 export locale="pt_BR.UTF-8"
 export kb="br"
 export kbvariant="abnt2"
 
 # Default values #
-export bootopts="locales=$locale keyboard-layouts=$kb keyboard-variants=$kbvariant"
+export bootopts="locales=$locale "
+export bootopts="keyboard-layouts=$kb keyboard-variants=$kbvariant"
 
 lb config noauto \
 	--mode=ubuntu \
 	--distribution="$release" \
 	--keyring-packages="ubuntu-keyring" \
-	--archive-areas "main restricted universe multiverse" \
-	--mirror-bootstrap $mirror/ubuntu \
-	--mirror-chroot-security $mirror/ubuntu-security \
+	--archive-areas="main restricted universe multiverse" \
+	--mirror-bootstrap=$mirror/ubuntu \
+	--mirror-chroot-security=$mirror/ubuntu-security \
 	--initramfs=live-boot \
 	--binary-images=iso-hibrid \
-	--bootloader=yaboot \
+	--bootloader=syslinux \
 	--debian-installer=live \
 	--ignore-system-defaults \
 	--iso-application="Ubuntu Minimal" \
@@ -28,5 +30,5 @@ lb config noauto \
 	--iso-volume="Ubuntu_Minimal_Setup" \
 	--memtest=none \
 	--system=live \
-	--source=false \
+	--clean \
 	"${@}"

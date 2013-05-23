@@ -1,22 +1,36 @@
 #!/bin/sh
 
+# Use the tools/configure-local-apt-cache script
 export mirror="http://localhost:9999/"
-export release="wheezy"
 
+export release="wheezy"
 export locale="pt_BR.UTF-8"
 export kb="br"
 export kbvariant="abnt2"
 
-# Default values #
-export bootopts="locales=$locale keyboard-layouts=$kb keyboard-variants=$kbvariant"
+# Default values
+export bootopts="locales=$locale "
+export bootopts="$bootopts keyboard-layouts=$kb "
+export bootopts="$bootopts keyboard-variants=$kbvariant"
 
 lb config noauto \
-	--distribution "$release" \
-	--architecture i386 --linux-flavours 486 \
+	--mode=debian \
+	--distribution="$release" \
 	--archive-areas "main contrib non-free" \
 	--mirror-bootstrap $mirror/debian \
 	--mirror-chroot-security $mirror/security \
+	--architecture i386 \
+	--linux-flavours 486 \
 	--debian-installer live \
+	--binary-images iso-hybrid \
+	--system=live \
 	--bootappend-live "boot=live config $bootopts" \
-	--apt-indices false --apt-recommends false --memtest none \
+	--apt-indices false \
+	--apt-recommends false \
+	--memtest none \
+	--iso-application="Developer Desktop" \
+	--iso-preparer="Ronoaldo" \
+	--iso-publisher="Ronoaldo" \
+	--iso-volume="Developer_Desktop" \
+	--clean \
 	"${@}"
