@@ -19,9 +19,10 @@ lb config noauto \
 	--archive-areas="main restricted universe multiverse" \
 	--mirror-bootstrap=$mirror/ubuntu \
 	--mirror-chroot-security=$mirror/ubuntu-security \
+	--architecture=i386 \
 	--initramfs=live-boot \
 	--binary-images=iso-hibrid \
-	--bootloader=syslinux \
+	--bootloader=grub2 \
 	--debian-installer=live \
 	--ignore-system-defaults \
 	--iso-application="Ubuntu Minimal" \
