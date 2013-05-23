@@ -27,6 +27,7 @@ configure_approx() {
 	read -p "Overrwrite /etc/approx/approx.conf? (y|N)" confirm
 	case $confirm in
 		Y|y|yes|Yes)
+			echo "Overwriting ..."
 			;;
 		*)
 			echo "Aborting ..."
