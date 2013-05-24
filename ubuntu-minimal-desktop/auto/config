@@ -21,7 +21,7 @@ lb config noauto \
 	--mirror-chroot-security=$mirror/ubuntu-security \
 	--architecture=i386 \
 	--initramfs=live-boot \
-	--binary-images=iso-hibrid \
+	--binary-images=iso-hybrid \
 	--bootloader=grub2 \
 	--debian-installer=live \
 	--ignore-system-defaults \
