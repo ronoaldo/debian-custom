@@ -1,4 +1,1 @@
-grub-pc
-grub-pc-bin
-grub-common
-grub2-common
+../../../package-lists/base.list.binary

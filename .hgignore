@@ -5,3 +5,4 @@ syntax: glob
 */config/*
 */binary*
 */.build/*
+*/build.log

@@ -1,24 +1,30 @@
 #!/bin/sh
 
-export mirror="http://localhost:9999"
+# Includes default functions
+source $(dirname $0)/../../common/config
+
+# Current release
 export release="precise"
 
-export locale="pt_BR.UTF-8"
-export kb="br"
-export kbvariant="abnt2"
-
-# Default values #
-export bootopts="locales=$locale keyboard-layouts=$kb keyboard-variants=$kbvariant"
-
+# Build options
 lb config noauto \
 	--mode=ubuntu \
-	--distribution "$release" --keyring-packages="ubuntu-keyring" \
-	--architecture i386 --linux-flavours generic \
-	--archive-areas "main restricted universe multiverse" \
-	--mirror-bootstrap $mirror/ubuntu \
-	--mirror-chroot-security $mirror/ubuntu-security \
-	--debian-installer live \
-	--bootappend-live "boot=live config $bootopts" \
-	--apt-indices false --apt-recommends false --memtest none \
-	--initramfs casper  \
+	--distribution="$release" \
+	--keyring-packages="ubuntu-keyring" \
+	--archive-areas="main restricted universe multiverse" \
+	--mirror-bootstrap=$mirror/ubuntu \
+	--mirror-chroot-security=$mirror/ubuntu-security \
+	--architecture=i386 \
+	--initramfs=live-boot \
+	--binary-images=iso-hybrid \
+	--bootloader=grub2 \
+	--debian-installer=live \
+	--ignore-system-defaults \
+	--iso-application="Ubuntu Minimal" \
+	--iso-preparer="Ronoaldo" \
+	--iso-publisher="Ronoaldo" \
+	--iso-volume="Ubuntu_Minimal_Setup" \
+	--memtest=none \
+	--system=live \
+	--clean \
 	"${@}"
