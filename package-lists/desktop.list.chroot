@@ -1,33 +1,51 @@
+# debian-desktop
 desktop-base
+anacron
+
+# x-server
 xserver-xorg
+libgl1-mesa-dri
+x11-xserver-utils
+
+# freedesktop.org
 menu
 menu-xdg
 xdg-utils
+
+# audio
 alsa-base
 alsa-utils
+
+# keyboard
 keyboard-configuration
+
+# network
 network-manager-gnome
 avahi-daemon
 libnss-mdns
-anacron
-libgl1-mesa-dri
 iw
+
+# scanner
 xsane
 
+# package-managers
 gdebi
 gdebi-core
 synaptic
 system-config-printer
 
+# session-managers
 lightdm
 lightdm-gtk-greeter
 
+# lxde
 lxde
 lxde-icon-theme
 lxtask
 lxlauncher
 lxpolkit
 
+# window maker
 wmaker
 wmcpuload
 wmmixer
@@ -35,6 +53,7 @@ wmtemp
 wmclock
 docker
 
+# browser
 chromium-browser
 chromium-browser-l10n
 iceweasel
@@ -42,7 +61,10 @@ iceweasel-l10n-pt-br
 flashplugin-nonfree
 icedtea-6-plugin
 
+# l10n/i18n
 task-brazilian-portuguese
 task-brazilian-portuguese-desktop
 
+# installer
 debian-installer-launcher
+
