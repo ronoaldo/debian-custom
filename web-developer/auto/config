@@ -1,18 +1,13 @@
 #!/bin/sh
 
-# Use the tools/configure-local-apt-cache script
-export mirror="http://localhost:9999/"
+# Common configuration options
+source $(dirname $0)/../../common/proxy
+source $(dirname $0)/../../common/locales
 
+# Release
 export release="wheezy"
-export locale="pt_BR.UTF-8"
-export kb="br"
-export kbvariant="abnt2"
 
-# Default values
-export bootopts="locales=$locale "
-export bootopts="$bootopts keyboard-layouts=$kb "
-export bootopts="$bootopts keyboard-variants=$kbvariant"
-
+# Configure build tree
 lb config noauto \
 	--mode=debian \
 	--distribution="$release" \

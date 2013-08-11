@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Use the tools/configure-local-apt-cache script to configure
+# a local repository cache - Usefull for speed up rebuilds
+export mirror="http://localhost:9999"

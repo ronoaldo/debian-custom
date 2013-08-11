@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Common configuration for all custom builds
-
-# Use the tools/configure-local-apt-cache script to configure
-# a local repository cache - Usefull for speed up rebuilds
-export mirror="http://localhost:9999"
-
 # Locales and setup
 export locale="pt_BR.UTF-8"
 export kb="br"
