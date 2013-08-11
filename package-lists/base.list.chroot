@@ -1,0 +1,11 @@
+eject
+file
+sudo
+console-setup
+console-common
+kbd
+locales
+bash-completion
+
+user-setup
+live-config
