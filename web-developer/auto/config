@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # Common configuration options
-source $(dirname $0)/../../common/proxy
-source $(dirname $0)/../../common/locales
+. $(dirname $0)/../../common/proxy
+. $(dirname $0)/../../common/locales
 
 # Release
 export release="wheezy"

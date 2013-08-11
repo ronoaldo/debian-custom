@@ -5,6 +5,8 @@ export locale="pt_BR.UTF-8"
 export kb="br"
 export kbvariant="abnt2"
 
-# Default values #
-export bootopts="locales=$locale "
-export bootopts="keyboard-layouts=$kb keyboard-variants=$kbvariant"
+# Expand bootopts to include default locale settings
+export bootopts="$bootopts locales=$locale "
+export bootopts="$bootopts keyboard-layouts=$kb "
+export bootopts="$bootopts keyboard-variants=$kbvariant"
+
