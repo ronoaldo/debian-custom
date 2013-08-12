@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# Common configuration options
+. $(dirname $0)/../../common/proxy
+. $(dirname $0)/../../common/locales
+
+# Release
+export release="wheezy"
+
+# Configure build tree
+lb config noauto \
+	--mode=debian \
+	--distribution="$release" \
+	--archive-areas "main contrib non-free" \
+	--mirror-bootstrap $mirror/debian \
+	--mirror-chroot-security $mirror/security \
+	--architecture i386 \
+	--linux-flavours 486 \
+	--debian-installer live \
+	--binary-images iso-hybrid \
+	--system=live \
+	--bootappend-live "boot=live config $bootopts" \
+	--apt-indices false \
+	--apt-recommends false \
+	--memtest none \
+	--iso-application="Office Desktop" \
+	--iso-preparer="Ronoaldo" \
+	--iso-publisher="Ronoaldo" \
+	--iso-volume="Office_Desktop" \
+	--clean \
+	"${@}"
