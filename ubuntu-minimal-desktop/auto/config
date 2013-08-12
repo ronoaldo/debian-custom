@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # Includes default functions
-source $(dirname $0)/../../common/proxy
-source $(dirname $0)/../../common/locales
+. $(dirname $0)/../../common/proxy
+. $(dirname $0)/../../common/locales
 
 # Current release
 export release="precise"
