@@ -14,8 +14,7 @@ lb config noauto \
 	--archive-areas "main contrib non-free" \
 	--mirror-bootstrap $mirror/debian \
 	--mirror-chroot-security $mirror/security \
-	--architecture i386 \
-	--linux-flavours 486 \
+	--architecture amd64 \
 	--debian-installer live \
 	--binary-images iso-hybrid \
 	--system=live \
@@ -23,9 +22,9 @@ lb config noauto \
 	--apt-indices false \
 	--apt-recommends false \
 	--memtest none \
-	--iso-application="Office Desktop" \
-	--iso-preparer="Ronoaldo" \
-	--iso-publisher="Ronoaldo" \
-	--iso-volume="Office_Desktop" \
+	--iso-application="Web Based Desktop" \
+	--iso-preparer="Ronoaldo Consulting" \
+	--iso-publisher="Ronoaldo Consulting" \
+	--iso-volume="Web_Based_Desktop" \
 	--clean \
 	"${@}"
