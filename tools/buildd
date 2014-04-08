@@ -1,0 +1,62 @@
+#!/bin/bash
+# Build all distributions automatically.
+
+basedir="$(readlink -f $(dirname $0)/..)"
+cd $basedir
+
+# Informational messages
+info() {
+	echo "[buildd] $(date '+%Y-%m-%d %H:%M:%S'): $@"
+}
+
+# Run lb build on the current directory.
+build_iso() {
+	if [ -n "$DRY_RUN" ] ; then
+		info "Dry run only ... exiting"
+		return 0
+	fi
+	sudo lb clean --purge && lb config && sudo lb build
+}
+
+# Publish the snapshot iso to sourceforge project files
+deploy_snapshot() {
+	rsync -e ssh $1 ronoaldo@frs.sourceforge.net:/home/frs/project/ronolinux/snapshots/$2
+}
+
+# Main
+DISTROS=""
+while [ $# -gt 0 ]; do
+	case $1 in
+		--deploy|--publish)
+			export PUBLISH="1"
+		;;
+		*)
+			export DISTROS="$DISTROS $1"
+		;;
+	esac
+	shift
+done
+DISTROS="${DISTROS:-web-desktop web-developer}"
+
+# Loop over each distro and build them
+info "Building distros: $DISTROS ..."
+for distro in $DISTROS ; do
+	cd $distro
+	
+	info "Building $distro ..."
+	if build_iso ; then
+		info "$distro build done"
+		if [ -n "$PUBLISH" ]; then
+			info "Releasing snapshots"
+			deploy_snapshot binary.hybrid.iso $distro-binary-amd64.hybrid.iso
+			deploy_snapshot binary.packages   $distro-binary-amd64.packages.txt
+		else
+			info "Skiptting release of snapshots"
+		fi
+	else
+		info "[buildd] Build of $distro failed."
+	fi
+
+	cd ..
+done
+

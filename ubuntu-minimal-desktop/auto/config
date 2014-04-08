@@ -22,9 +22,9 @@ lb config noauto \
 	--debian-installer=live \
 	--ignore-system-defaults \
 	--iso-application="Ubuntu Minimal" \
-	--iso-preparer="Ronoaldo" \
-	--iso-publisher="Ronoaldo" \
-	--iso-volume="Ubuntu_Minimal_Setup" \
+	--iso-preparer="Ronoaldo Consulting" \
+	--iso-publisher="Ronoaldo Consulting" \
+	--iso-volume="Ubuntu_Minimal" \
 	--memtest=none \
 	--system=live \
 	--clean \
