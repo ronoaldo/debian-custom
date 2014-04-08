@@ -18,7 +18,7 @@ Debian mirrors, and you can use them as normal for installing
 more software after you use the instalation media. They
 are also standard live media so you can run them from your
 USB stick or ISO (CD/DVD). See this link for more details on the
-![Live Manual][LiveManual]
+[Live Manual][LiveManual]
 
 ## How to build your own
 
