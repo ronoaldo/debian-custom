@@ -59,5 +59,8 @@ icedtea-7-plugin
 task-brazilian-portuguese
 task-brazilian-portuguese-desktop
 
+# kernel and firmware
+firmware-linux
+
 # installer
 debian-installer-launcher
