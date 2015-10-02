@@ -36,7 +36,7 @@ while [ $# -gt 0 ]; do
 	esac
 	shift
 done
-DISTROS="${DISTROS:-web-desktop web-developer}"
+DISTROS="${DISTROS:-desktop developer}"
 
 # Loop over each distro and build them
 info "Building distros: $DISTROS ..."

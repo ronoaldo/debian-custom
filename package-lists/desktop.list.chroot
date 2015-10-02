@@ -50,8 +50,8 @@ lxpolkit
 gtk2-engines
 
 # browser
-chromium-browser
-chromium-browser-l10n
+chromium
+chromium-l10n
 flashplugin-nonfree
 icedtea-7-plugin
 
