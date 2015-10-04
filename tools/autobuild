@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# This hook tells via HTTP that we are building,
+# so we can trigger a build with aetools/vmproxy.
+(while true ; do nc -l -c "echo 'HTTP/1.1 200 OK\r\n\r\nBuilding ...'" -p 80 ; done ) &
+
 # Helper function to fetch instance custom metadata
 # Usage:
 #   metadata key default-value
