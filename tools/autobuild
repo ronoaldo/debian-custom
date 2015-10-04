@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# Helper function to fetch instance custom metadata
+# Usage:
+#   metadata key default-value
+metadata() {
+	_url="http://metadata.google.internal/computeMetadata/v1/project/$1"
+	# Return the value found, or the default value if the metadata value does not exists
+	if curl --fail -s "${_url}" -H 'Metadata-Flavor: Google' > /dev/null ; then
+		curl --fail -s "${_url}" -H 'Metadata-Flavor: Google'
+	else
+		echo -n "$2"
+	fi
+}
+
+# Install dependencies
+apt-get install --yes live-build approx librsvg2-bin mercurial git subversion curl
+
+# Fetch ssh key from metadata server
+mkdir -p ~/.ssh
+metadata attributes/buildd-private-key "" > ~/.ssh/id_rsa
+metadata attributes/buildd-public-key  "" > ~/.ssh/id_rsa.pub
+ssh-keyscan -H frs.sourceforge.net > ~/.ssh/known_hosts
+chmod 0400 ~/.ssh/*
+
+# Checkout build source
+hg clone https://bitbucket.org/ronoaldo/debian-custom
+cd debian-custom
+yes | tools/configure-local-apt-proxy
+tools/buildd --deploy
+
+# Shutdown the VM after build finishes
+shutdown

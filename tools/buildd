@@ -42,14 +42,14 @@ DISTROS="${DISTROS:-desktop developer}"
 info "Building distros: $DISTROS ..."
 for distro in $DISTROS ; do
 	cd $distro
-	
+
 	info "Building $distro ..."
 	if build_iso ; then
 		info "$distro build done"
 		if [ -n "$PUBLISH" ]; then
 			info "Releasing snapshots"
-			deploy_snapshot binary.hybrid.iso $distro-binary-amd64.hybrid.iso
-			deploy_snapshot binary.packages   $distro-binary-amd64.packages.txt
+			deploy_snapshot live-image-amd64.hybrid.iso $distro-binary-amd64.hybrid.iso
+			deploy_snapshot live-image-amd64.packages   $distro-binary-amd64.packages.txt
 		else
 			info "Skiptting release of snapshots"
 		fi
