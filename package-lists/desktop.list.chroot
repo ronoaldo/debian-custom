@@ -30,12 +30,12 @@ iw
 # scanning and printing
 xsane
 cups
+system-config-printer
 
 # package-managers
 gdebi
 gdebi-core
 synaptic
-system-config-printer
 
 # session-managers
 lightdm
@@ -64,3 +64,6 @@ firmware-linux
 
 # installer
 debian-installer-launcher
+
+# system management
+gnome-system-tools

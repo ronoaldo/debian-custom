@@ -10,13 +10,23 @@ cdbs
 maven
 ant
 ivy
-openjdk-6-jdk
+openjdk-7-jdk
 python
+python-dev
 gcc
 g++
+golang
+golang-go.tools
+nodejs
+nodejs-legacy
+npm
+ruby
 
 subversion
 mercurial
 git
 
 python-django
+
+iceweasel
+iceweasel-l10n-pt-br
