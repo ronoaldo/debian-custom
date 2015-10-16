@@ -47,11 +47,12 @@ for distro in $DISTROS ; do
 	if build_iso ; then
 		info "$distro build done"
 		if [ -n "$PUBLISH" ]; then
-			info "Releasing snapshots"
-			deploy_snapshot live-image-amd64.hybrid.iso $distro-binary-amd64.hybrid.iso
-			deploy_snapshot live-image-amd64.packages   $distro-binary-amd64.packages.txt
+			info "Releasing snapshot files for $distro ..."
+			for s in contents files hybrid.iso hybrid.iso.zsync packages ; do
+				deploy_snapshot live-image-amd64.$s $distro-binary-amd64.$s
+			done
 		else
-			info "Skiptting release of snapshots"
+			info "Skipping release of snapshots"
 		fi
 	else
 		info "[buildd] Build of $distro failed."
@@ -59,4 +60,5 @@ for distro in $DISTROS ; do
 
 	cd ..
 done
+
 

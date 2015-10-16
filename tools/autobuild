@@ -31,7 +31,7 @@ chmod 0400 ~/.ssh/*
 hg clone https://bitbucket.org/ronoaldo/debian-custom
 cd debian-custom
 yes | tools/configure-local-apt-proxy
-tools/buildd --deploy
+tools/buildd --publish
 
 # Shutdown the VM after build finishes
 shutdown
