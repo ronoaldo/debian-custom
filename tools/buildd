@@ -49,7 +49,7 @@ for distro in $DISTROS ; do
 		if [ -n "$PUBLISH" ]; then
 			info "Releasing snapshot files for $distro ..."
 			for s in contents files hybrid.iso hybrid.iso.zsync packages ; do
-				deploy_snapshot live-image-amd64.$s $distro-binary-amd64.$s
+				deploy_snapshot live-image-amd64.$s ronolinux-$distro-snapshot-binary-amd64.$s
 			done
 		else
 			info "Skipping release of snapshots"

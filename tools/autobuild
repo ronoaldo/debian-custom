@@ -33,5 +33,6 @@ cd debian-custom
 yes | tools/configure-local-apt-proxy
 tools/buildd --publish
 
+echo "Build finished, shutting down VM ..."
 # Shutdown the VM after build finishes
 shutdown
