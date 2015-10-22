@@ -37,6 +37,9 @@ gdebi
 gdebi-core
 synaptic
 
+# archivers
+gzip bzip2 zip p7zip-full xz
+
 # session-managers
 lightdm
 lightdm-gtk-greeter
