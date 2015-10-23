@@ -1,8 +1,11 @@
 #!/bin/bash
-# Build all distributions automatically.
+
+# Builds all images automatically.
 
 basedir="$(readlink -f $(dirname $0)/..)"
 cd $basedir
+
+buildstamp="$(date '+%Y%m%d-%H%M%S')"
 
 # Informational messages
 info() {
@@ -12,7 +15,7 @@ info() {
 # Run lb build on the current directory.
 build_iso() {
 	if [ -n "$DRY_RUN" ] ; then
-		info "Dry run only ... exiting"
+		info "* Dry run only ... exiting"
 		return 0
 	fi
 	sudo lb clean --purge && lb config && sudo lb build
@@ -20,45 +23,58 @@ build_iso() {
 
 # Publish the snapshot iso to sourceforge project files
 deploy_snapshot() {
+	info Releasing snapshot file $1 as $2 on frs.sourceforge.net ...
+	if [ -n "$DRY_RUN" ] ; then
+		info "* Dry run, skipping upload"
+		return 0
+	fi
 	rsync -e ssh $1 ronoaldo@frs.sourceforge.net:/home/frs/project/ronolinux/snapshots/$2
 }
 
 # Main
-DISTROS=""
+FLAVORS=""
 while [ $# -gt 0 ]; do
 	case $1 in
 		--deploy|--publish)
 			export PUBLISH="1"
 		;;
 		*)
-			export DISTROS="$DISTROS $1"
+			export FLAVORS="$FLAVORS $1"
 		;;
 	esac
 	shift
 done
-DISTROS="${DISTROS:-desktop developer}"
+FLAVORS="${FLAVORS:-desktop developer}"
 
-# Loop over each distro and build them
-info "Building distros: $DISTROS ..."
-for distro in $DISTROS ; do
-	cd $distro
+# Loop over each flavor and build them
+info
+info "Building flavors: $FLAVORS ..."
+info
 
-	info "Building $distro ..."
+for flavor in $FLAVORS ; do
+	cd $flavor
+
+	info "*****"
+	info "Building $flavor ..."
+	info "*****"
+
 	if build_iso ; then
-		info "$distro build done"
+		info "$flavor build done"
 		if [ -n "$PUBLISH" ]; then
-			info "Releasing snapshot files for $distro ..."
+			info "Releasing snapshot files for $flavor ..."
 			for s in contents files hybrid.iso hybrid.iso.zsync packages ; do
-				deploy_snapshot live-image-amd64.$s ronolinux-$distro-snapshot-binary-amd64.$s
+				deploy_snapshot live-image-amd64.$s ronolinux-$flavor-$buildstamp-binary-amd64.$s
 			done
+			deploy_snapshot build.log ronolinux-$flavor-$buildstamp-binary-amd64.log
 		else
 			info "Skipping release of snapshots"
 		fi
 	else
-		info "[buildd] Build of $distro failed."
+		info "Build of $flavor failed."
 	fi
 
 	cd ..
+	info "Done"
+	info
 done
-
 

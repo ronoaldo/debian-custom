@@ -28,11 +28,14 @@ ssh-keyscan -H frs.sourceforge.net > ~/.ssh/known_hosts
 chmod 0400 ~/.ssh/*
 
 # Checkout build source
-hg clone https://bitbucket.org/ronoaldo/debian-custom
-cd debian-custom
+hg clone https://bitbucket.org/ronoaldo/debian-custom || true
+cd debian-custom && hg pull -u
 yes | tools/configure-local-apt-proxy
 tools/buildd --publish
+echo "Build finished"
 
-echo "Build finished, shutting down VM ..."
-# Shutdown the VM after build finishes
-shutdown
+echo "Fetching build log ..."
+gsutil cp /var/log/startupscripts.log gs://ronoaldo/ronolinux/logs/build-$(date +%Y%m%d-%H%M%S).log
+
+echo "Shutting VM down ..."
+shutdown -h now
