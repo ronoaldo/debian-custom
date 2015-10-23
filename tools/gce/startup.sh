@@ -4,7 +4,7 @@
 # so we can trigger a build with aetools/vmproxy.
 (while true ; do nc -l -c "echo 'HTTP/1.1 200 OK\r\n\r\nBuilding ...'" -p 80 ; done ) &
 
-# Helper function to fetch instance custom metadata
+# Helper function to fetch project metadata
 # Usage:
 #   metadata key default-value
 metadata() {
@@ -17,8 +17,8 @@ metadata() {
 	fi
 }
 
-# Install dependencies
-apt-get install --yes live-build approx librsvg2-bin mercurial git subversion curl
+# Install build dependencies
+apt-get install --yes live-build approx librsvg2-bin mercurial git subversion curl rsync
 
 # Fetch ssh key from metadata server
 mkdir -p ~/.ssh
@@ -28,14 +28,15 @@ ssh-keyscan -H frs.sourceforge.net > ~/.ssh/known_hosts
 chmod 0400 ~/.ssh/*
 
 # Checkout build source
+echo "Building ..."
 hg clone https://bitbucket.org/ronoaldo/debian-custom || true
 cd debian-custom && hg pull -u
 yes | tools/configure-local-apt-proxy
 tools/buildd --publish
 echo "Build finished"
 
-echo "Fetching build log ..."
-gsutil cp /var/log/startupscripts.log gs://ronoaldo/ronolinux/logs/build-$(date +%Y%m%d-%H%M%S).log
+echo "Updating full build log ..."
+gsutil cp /var/log/startupscript.log gs://ronoaldo/ronolinux/logs/build-$(date +%Y%m%d-%H%M%S).log
 
 echo "Shutting VM down ..."
 shutdown -h now
