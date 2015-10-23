@@ -38,7 +38,11 @@ gdebi-core
 synaptic
 
 # archivers
-gzip bzip2 zip p7zip-full xz
+gzip
+bzip2
+zip
+p7zip-full
+xz-utils
 
 # session-managers
 lightdm
@@ -70,3 +74,4 @@ debian-installer-launcher
 
 # system management
 gnome-system-tools
+
