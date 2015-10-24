@@ -493,7 +493,7 @@
          x="111.70522"
          sodipodi:role="line"
          style="font-size:18px;font-style:normal;font-weight:bold;-inkscape-font-specification:DejaVu Sans Bold"
-         id="tspan3066">Developer Build @TIMESTAMP@</tspan></text>
+         id="tspan3066">Desktop Build @TIMESTAMP@</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
