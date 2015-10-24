@@ -7,3 +7,4 @@ syntax: glob
 */.build/*
 */build.log
 */live-image-amd64.*
+*/ronolinux-*

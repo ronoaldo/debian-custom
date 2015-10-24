@@ -62,10 +62,10 @@ for flavor in $FLAVORS ; do
 		info "$flavor build done"
 		if [ -n "$PUBLISH" ]; then
 			info "Releasing snapshot files for $flavor ..."
-			for s in contents files hybrid.iso hybrid.iso.zsync packages ; do
-				deploy_snapshot live-image-amd64.$s ronolinux-$flavor-$buildstamp-binary-amd64.$s
+			for f in ronolinux-$flavor-snapshot-binary-amd64.* ; do
+				deploy_snapshot $f $f 
 			done
-			deploy_snapshot build.log ronolinux-$flavor-$buildstamp-binary-amd64.log
+			deploy_snapshot build.log ronolinux-$flavor-snapshot-binary-amd64.log
 		else
 			info "Skipping release of snapshots"
 		fi

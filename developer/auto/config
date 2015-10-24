@@ -9,6 +9,7 @@ export release="jessie"
 
 # Configure build tree
 lb config noauto \
+	--ignore-system-defaults \
 	--mode=debian \
 	--distribution="$release" \
 	--archive-areas "main contrib non-free" \
@@ -22,9 +23,10 @@ lb config noauto \
 	--apt-indices false \
 	--apt-recommends false \
 	--memtest none \
+	--image-name 'ronolinux-developer-snapshot-binary' \
 	--iso-application="Developer Desktop" \
-	--iso-preparer="Ronoaldo" \
-	--iso-publisher="Ronoaldo" \
-	--iso-volume="Developer_Desktop" \
+	--iso-preparer="Ronoaldo Consulting" \
+	--iso-publisher="Ronoaldo Consulting" \
+	--iso-volume="Ronolinux_Developer" \
 	--clean \
 	"${@}"

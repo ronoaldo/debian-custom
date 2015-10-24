@@ -28,10 +28,12 @@ ssh-keyscan -H frs.sourceforge.net > ~/.ssh/known_hosts
 chmod 0400 ~/.ssh/*
 
 # Checkout build source
-echo "Building ..."
+echo "Updating build scripts ..."
 hg clone https://bitbucket.org/ronoaldo/debian-custom || true
 cd debian-custom && hg pull -u
 yes | tools/configure-local-apt-proxy
+
+echo "Building ..."
 tools/buildd --publish
 echo "Build finished"
 
