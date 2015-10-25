@@ -22,7 +22,7 @@ lb config noauto \
 	--bootappend-live "boot=live config $bootopts" \
 	--apt-indices false \
 	--apt-recommends false \
-	--memtest none \
+	--memtest memtest86+ \
 	--image-name 'ronolinux-desktop-snapshot-binary' \
 	--iso-application="Ronolinux Desktop" \
 	--iso-preparer="Ronoaldo Consulting" \
