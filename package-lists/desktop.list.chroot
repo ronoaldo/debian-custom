@@ -36,6 +36,7 @@ system-config-printer
 gdebi
 gdebi-core
 synaptic
+gnome-packagekit
 
 # archivers
 gzip
@@ -53,14 +54,18 @@ lxde
 lxde-icon-theme
 lxtask
 lxlauncher
-lxpolkit
 gtk2-engines
+clipit
+usermode
+
+# multimedia
+evince-gtk
+vlc
+gimp
 
 # browser
 chromium
 chromium-l10n
-flashplugin-nonfree
-icedtea-7-plugin
 
 # l10n/i18n
 task-brazilian-portuguese
@@ -74,4 +79,3 @@ debian-installer-launcher
 
 # system management
 gnome-system-tools
-
