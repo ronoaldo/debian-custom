@@ -57,6 +57,7 @@ lxlauncher
 gtk2-engines
 clipit
 usermode
+obconf
 
 # multimedia
 evince-gtk
