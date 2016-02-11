@@ -44,7 +44,7 @@ while [ $# -gt 0 ]; do
 	esac
 	shift
 done
-FLAVORS="${FLAVORS:-desktop developer}"
+FLAVORS="${FLAVORS:-desktop developer education}"
 
 # Loop over each flavor and build them
 info
@@ -63,7 +63,7 @@ for flavor in $FLAVORS ; do
 		if [ -n "$PUBLISH" ]; then
 			info "Releasing snapshot files for $flavor ..."
 			for f in ronolinux-$flavor-snapshot-binary-amd64.* ; do
-				deploy_snapshot $f $f 
+				deploy_snapshot $f $f
 			done
 			deploy_snapshot build.log ronolinux-$flavor-snapshot-binary-amd64.log
 		else

@@ -1,0 +1,25 @@
+#!/bin/bash
+set -e
+
+# Check required packages
+if [ ! -x /usr/bin/rsvg ] ; then
+	echo "Unable to find rsvg. Install librsvg2-bin in your system."
+	exit 1
+fi
+
+# Files
+_SVG_IN="$(readlink -f $(dirname $0))/splash.svg.in"
+_SVG="binary/isolinux/splash.svg"
+_PNG="binary/isolinux/splash.png"
+
+echo "Converting ${_SVG_IN} into ${_PNG} ..."
+
+# Merge template svg into immediate svg
+_TIMESTAMP="$(date +%Y-%m-%d-%H:%M:%S)"
+sed -e "s/@TIMESTAMP@/${_TIMESTAMP}/g" < "$_SVG_IN" > "$_SVG"
+
+# Render png
+rsvg --format=png --width=640 --height=480 "$_SVG" "$_PNG"
+
+# Cleanup immediate svg to save some bytes
+rm "${_SVG}"
