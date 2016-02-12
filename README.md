@@ -11,7 +11,7 @@ like to share with others.
 You can download the files from SourceForge, on a mirror
 closer to you:
 
-	https://sourceforge.net/projects/ronolinux/files/snapshots/
+[![Download ronolinux](https://a.fsdn.com/con/app/sf-download-button)](https://sourceforge.net/projects/ronolinux/files/snapshots/)
 
 Those files are pre-built images using the standard
 Debian mirrors, and you can use them as normal for installing
