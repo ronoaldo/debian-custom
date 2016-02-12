@@ -1,8 +1,0 @@
-#!/bin/sh
-
-set -e
-
-echo -n "[INFO] Rebuliding menu entries ... "
-chmod +x /etc/menu-methods/wmaker
-update-menus
-echo "[done]"
