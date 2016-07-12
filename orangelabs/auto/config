@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# Common configuration options
+. $(dirname $0)/../../common/proxy
+. $(dirname $0)/../../common/locales
+
+# Release
+export release="jessie"
+
+# Configure build tree
+lb config noauto \
+	--ignore-system-defaults \
+	--mode=debian \
+	--distribution="$release" \
+	--archive-areas "main contrib non-free" \
+	--mirror-bootstrap $mirror/debian \
+	--mirror-chroot-security $mirror/security \
+	--architecture amd64 \
+	--debian-installer live \
+	--binary-images iso-hybrid \
+	--system=live \
+	--bootappend-live "boot=live config $bootopts" \
+	--apt-indices true \
+	--apt-recommends true \
+	--memtest memtest86+ \
+	--image-name 'ronolinux-orange' \
+	--iso-application="Ronolinux Orange Labs" \
+	--iso-preparer="Ronoaldo Consulting" \
+	--iso-publisher="Ronoaldo Consulting" \
+	--iso-volume="Ronolinux_Orange" \
+	--clean \
+	"${@}"

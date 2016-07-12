@@ -44,7 +44,7 @@ while [ $# -gt 0 ]; do
 	esac
 	shift
 done
-FLAVORS="${FLAVORS:-desktop developer education}"
+FLAVORS="${FLAVORS:-desktop education}"
 
 # Loop over each flavor and build them
 info

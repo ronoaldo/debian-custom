@@ -49,7 +49,9 @@ xz-utils
 lightdm
 lightdm-gtk-greeter
 
-# desktop environment
+# desktop environments
+
+## LXDE
 lxde
 lxde-icon-theme
 lxtask
@@ -63,6 +65,22 @@ gnome-keyring
 gnome-disk-utility
 xscreensaver
 
+## Mate
+mate-desktop-environment
+engrampa
+pluma
+eom
+mate-power-manager
+mate-screensaver
+galculator
+mate-utils
+mate-applets
+mate-media
+mate-themes
+mate-icon-theme-faenza
+mate-system-monitor
+mate-notification-daemon
+
 # multimedia
 evince-gtk
 vlc
@@ -71,6 +89,7 @@ gimp
 # browser
 chromium
 chromium-l10n
+firefox-esr
 
 # l10n/i18n
 task-brazilian-portuguese
