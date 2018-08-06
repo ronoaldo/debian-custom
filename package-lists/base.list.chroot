@@ -1,5 +1,7 @@
 ! Packages Priority standard
 
+apt-transport-https
+
 eject
 file
 sudo

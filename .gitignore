@@ -1,0 +1,9 @@
+*/config/*
+*/cache/*
+*/chroot*
+*/.stage/*
+*/binary*
+*/.build/*
+*/build.log
+*/live-image-amd64.*
+*/ronolinux-*
