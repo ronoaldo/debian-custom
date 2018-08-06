@@ -52,7 +52,11 @@ info "Building flavors: $FLAVORS ..."
 info
 
 for flavor in $FLAVORS ; do
-	cd $flavor
+	if ! [ -d $basedir/$flavor ] ; then
+		echo "*** Unable to find $basedir/$flavor. "
+		exit 1
+	fi
+	cd ${basedir}/$flavor
 
 	info "*****"
 	info "Building $flavor ..."
@@ -73,7 +77,7 @@ for flavor in $FLAVORS ; do
 		info "Build of $flavor failed."
 	fi
 
-	cd ..
+	cd $basedir 
 	info "Done"
 	info
 done

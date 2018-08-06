@@ -5,7 +5,7 @@
 . $(dirname $0)/../../common/locales
 
 # Release
-export release="jessie"
+export release="stretch"
 
 # Configure build tree
 lb config noauto \
@@ -19,6 +19,7 @@ lb config noauto \
 	--debian-installer live \
 	--binary-images iso-hybrid \
 	--system=live \
+	--debootstrap-options "--include=apt-transport-https,ca-certificates" \
 	--bootappend-live "boot=live config $bootopts" \
 	--apt-indices false \
 	--apt-recommends false \

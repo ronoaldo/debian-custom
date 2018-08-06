@@ -13,7 +13,6 @@ menu-xdg
 xdg-utils
 
 # audio
-alsa-base
 alsa-utils
 pulseaudio
 pavucontrol
@@ -66,16 +65,16 @@ gnome-disk-utility
 xscreensaver
 
 ## Mate
-mate-desktop-environment
+#mate-desktop-environment
 engrampa
 pluma
 eom
-mate-power-manager
-mate-screensaver
+#mate-power-manager
+#mate-screensaver
 galculator
-mate-utils
-mate-applets
-mate-media
+#mate-utils
+#mate-applets
+#mate-media
 mate-themes
 mate-icon-theme-faenza
 mate-system-monitor

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+FLAVOUR=$1
+
+echo "Linking common archive repositories to $FLAVOUR ..."
+
+mkdir -p $FLAVOUR/config/archives
+cd $FLAVOUR/config/archives
+echo "Current directory ${PWD}"
+
+for a in ../../../archives/*.list ; do
+	lnk=${a##*/}
+	ln -s $a $lnk.binary
+	ln -s $a $lnk.chroot
+	git add -f $lnk.binary $lnk.chroot
+done

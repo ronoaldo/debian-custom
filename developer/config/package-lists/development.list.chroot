@@ -10,7 +10,7 @@ cdbs
 maven
 ant
 ivy
-openjdk-7-jdk
+openjdk-8-jdk
 python
 python-dev
 gcc
@@ -19,14 +19,14 @@ golang
 golang-go.tools
 nodejs
 nodejs-legacy
-npm
 ruby
+python-dev
+python-setuptools
 
 subversion
 mercurial
 git
 
-python-django
-
-iceweasel
-iceweasel-l10n-pt-br
+# Non free development tools
+docker-ce
+code

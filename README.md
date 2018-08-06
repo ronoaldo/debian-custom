@@ -41,4 +41,4 @@ need to run this script with a user that is in the group sudo.
 The project is distributed under the terms of the GNU
 General Public License 2.0 or later.
 
-[LiveManual]: http://live-systems.org/manual/stable/html/live-manual/the-basics.en.html#181
+[LiveManual]: https://live-team.pages.debian.net/live-manual/html/live-manual/index.en.html
