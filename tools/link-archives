@@ -1,6 +1,11 @@
 #!/bin/bash
+set -e
 
 FLAVOUR=$1
+if [ ! -d "${FLAVOUR}" ] ; then
+	echo "No direcroty found $FLAVOUR"
+	exit 1
+fi
 
 echo "Linking common archive repositories to $FLAVOUR ..."
 
@@ -8,8 +13,12 @@ mkdir -p $FLAVOUR/config/archives
 cd $FLAVOUR/config/archives
 echo "Current directory ${PWD}"
 
-for a in ../../../archives/*.list ; do
+for a in ../../../archives/*.{list,key} ; do
 	lnk=${a##*/}
+	echo "Configuring $lnk ..."
+	if [ -f $lnk.binary ] ; then
+		continue
+	fi
 	ln -s $a $lnk.binary
 	ln -s $a $lnk.chroot
 	git add -f $lnk.binary $lnk.chroot
