@@ -5,7 +5,7 @@
 . $(dirname $0)/../../common/locales
 
 # Release
-export release="stretch"
+export release="bullseye"
 
 # Configure build tree
 lb config noauto \
@@ -13,7 +13,9 @@ lb config noauto \
 	--mode=debian \
 	--distribution="$release" \
 	--archive-areas "main contrib non-free" \
+	--backports "true" \
 	--mirror-bootstrap $mirror/debian \
+	--mirror-chroot $mirror/debian \
 	--mirror-chroot-security $mirror/security \
 	--architecture amd64 \
 	--debian-installer live \
@@ -21,7 +23,7 @@ lb config noauto \
 	--system=live \
 	--bootappend-live "boot=live config $bootopts" \
 	--apt-indices false \
-	--apt-recommends false \
+	--apt-recommends true \
 	--memtest memtest86+ \
 	--image-name 'ronolinux-desktop-snapshot-binary' \
 	--iso-application="Ronolinux Desktop" \

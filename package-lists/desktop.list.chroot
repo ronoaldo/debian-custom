@@ -69,18 +69,19 @@ eom
 mate-power-manager
 galculator
 mate-themes
-mate-icon-theme-faenza
 mate-system-monitor
 
 # multimedia
-evince-gtk
+evince
 vlc
 gimp
 inkscape
 
 # browser
-google-chrome-stable
+chromium
+chromium-l10n
 firefox-esr
+firefox-esr-l10n-pt-br
 
 # l10n/i18n
 task-brazilian-portuguese
