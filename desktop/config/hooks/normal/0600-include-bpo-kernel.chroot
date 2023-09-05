@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -e
+
+apt -y install -t bookworm-backports linux-image-amd64 linux-headers-amd64 firmware-linux
+apt -y autoremove
+apt -y clean
+
+update-initramfs -c -k all

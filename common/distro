@@ -1,0 +1,2 @@
+# Set default release for all builds
+export DEBIAN_RELEASE="bookworm"
