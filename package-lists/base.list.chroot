@@ -1,15 +1,13 @@
 ! Packages Priority standard
 
-apt-transport-https
+# base system
+live-task-base
+live-task-extra
 
-eject
-file
-sudo
-console-setup
-console-common
-kbd
-locales
-bash-completion
+# localization
+ibus-m17n
+task-english
+task-brazilian-portuguese
 
-user-setup
-live-config
+# installer
+calamares-settings-debian

@@ -5,14 +5,14 @@
 . $(dirname $0)/../../common/locales
 
 # Release
-export release="bullseye"
+export release="bookworm"
 
 # Configure build tree
 lb config noauto \
 	--ignore-system-defaults \
 	--mode=debian \
 	--distribution="$release" \
-	--archive-areas "main contrib non-free" \
+	--archive-areas "main contrib non-free non-free-firmware" \
 	--backports "true" \
 	--mirror-bootstrap $mirror/debian \
 	--mirror-chroot $mirror/debian \
@@ -22,7 +22,6 @@ lb config noauto \
 	--binary-images iso-hybrid \
 	--system=live \
 	--bootappend-live "boot=live config $bootopts" \
-	--apt-indices false \
 	--apt-recommends true \
 	--memtest memtest86+ \
 	--image-name 'ronolinux-desktop-snapshot-binary' \
