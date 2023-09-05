@@ -1,0 +1,11 @@
+# Debian 12 Bookworm - Updates
+deb [arch=amd64] http://deb.debian.org/debian/ bookworm-updates main contrib non-free non-free-firmware
+
+# Debian 12 Bookworm - Security Updates
+deb [arch=amd64] http://deb.debian.org/debian-security/ bookworm-security main contrib non-free non-free-firmware
+
+# Debian 12 Bookworm - Proposed Updates
+deb [arch=amd64] http://deb.debian.org/debian/ bookworm-proposed-updates main contrib non-free non-free-firmware
+
+# Debian 12 Bookworm - Backports
+deb [arch=amd64] http://deb.debian.org/debian/ bookworm-backports main contrib non-free non-free-firmware

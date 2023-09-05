@@ -1,6 +1,7 @@
 */cache/*
 */chroot*
 */.stage/*
+*/.lock
 */binary*
 */.build/*
 */build.log

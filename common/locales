@@ -1,12 +1,4 @@
-#!/bin/bash
-
-# Locales and setup
-export locale="pt_BR.UTF-8"
-export kb="br"
-export kbvariant="abnt2"
-
-# Expand bootopts to include default locale settings
-export bootopts="$bootopts locales=$locale "
-export bootopts="$bootopts keyboard-layouts=$kb "
-export bootopts="$bootopts keyboard-variants=$kbvariant"
-
+# Expand BOOTOPTS to include default locale settings
+export BOOTOPTS="$BOOTOPTS locales=pt_BR.UTF-8 "
+export BOOTOPTS="$BOOTOPTS keyboard-layouts=br "
+export BOOTOPTS="$BOOTOPTS keyboard-variants=abnt2 "

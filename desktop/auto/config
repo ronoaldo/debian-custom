@@ -3,32 +3,29 @@
 # Common configuration options
 . $(dirname $0)/../../common/proxy
 . $(dirname $0)/../../common/locales
-
-# Release
-export release="bullseye"
+. $(dirname $0)/../../common/distro
 
 # Configure build tree
 lb config noauto \
 	--ignore-system-defaults \
 	--mode=debian \
-	--distribution="$release" \
-	--archive-areas "main contrib non-free" \
+	--distribution="${DEBIAN_RELEASE}" \
+	--archive-areas "main contrib non-free non-free-firmware" \
 	--backports "true" \
-	--mirror-bootstrap $mirror/debian \
-	--mirror-chroot $mirror/debian \
-	--mirror-chroot-security $mirror/security \
+	--mirror-bootstrap ${MIRROR}/debian \
+	--mirror-chroot ${MIRROR}/debian \
+	--mirror-chroot-security ${MIRROR}/security \
 	--architecture amd64 \
 	--debian-installer live \
 	--binary-images iso-hybrid \
 	--system=live \
-	--bootappend-live "boot=live config $bootopts" \
-	--apt-indices false \
+	--bootappend-live "boot=live config ${BOOTOPTS}" \
 	--apt-recommends true \
 	--memtest memtest86+ \
 	--image-name 'ronolinux-desktop-snapshot-binary' \
-	--iso-application="Ronolinux Desktop" \
+	--iso-volume="ronolinux-${DEBIAN_RELEASE}" \
+	--iso-application="Ronolinux Desktop ${DEBIAN_RELEASE}" \
 	--iso-preparer="Ronoaldo Consulting" \
 	--iso-publisher="Ronoaldo Consulting" \
-	--iso-volume="Ronolinux_Desktop" \
 	--clean \
 	"${@}"
